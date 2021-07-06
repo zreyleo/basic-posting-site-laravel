@@ -8,6 +8,10 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
+                        @if ($post->imagen)
+                            {{$post->imagen}}
+                            <img src="{{ asset("$post->imagen") }}" alt="hola">
+                        @endif
                         <p class="card-text">{{ $post->get_excerpt }}</p>
                         <a href="{{ route('post', $post) }}">Leer más</a>
                         <p class="text-muted">
